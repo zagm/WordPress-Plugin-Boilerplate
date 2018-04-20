@@ -1,0 +1,5 @@
+Plugin documetation
+
+Action tags:
+	- refine_it_module_activation
+	- refine_it_module_deactivation

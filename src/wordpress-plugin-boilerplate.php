@@ -1,15 +1,5 @@
 <?php
 
-/*
-  Plugin Name: WordPress Plugin Boilerplate
-  Plugin URI: https://github.com/theantichris/wordpress-plugin-boilerplate
-  Description: An object oriented boilerplate for developing a WordPress plugin.
-  Version: 6.0.0
-  Author: Christopher Lamm
-  Author URI: http://www.theantichris.com
-  License: GPL V3
- */
-
 class WordPress_Plugin_Boilerplate {
 	private static $instance = null;
 	private $plugin_path;
