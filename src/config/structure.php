@@ -1,6 +1,7 @@
 <?php
 
 return [
+
 	'required_module_elements' => [
 		'assets_folder' 		=> 'assets',
 		'config_folder'			=> 'config',

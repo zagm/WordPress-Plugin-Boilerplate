@@ -1,7 +1,7 @@
 <?php
 
 /*
-  Plugin Name: WordPress Refineit plugin
+  Plugin Name: WordPress RefineIt plugin
   Plugin URI: https://github.com/zagm/WordPress-Plugin-Boilerplate.git
   Description: Clean and healthy starting point to build a Wordpress plugin.
   Version: 0.0.1
@@ -10,6 +10,7 @@
   License: GPL V3
  */
 
+require_once './support/Config.php';
 require_once './support/Autoloader.php';
 
 return [
@@ -20,8 +21,11 @@ return [
 	 * unless you really know what you are doing.
 	 * 
 	 */
-	new \RefineIt\Support\Autoloader(),
 	\RefineIt\Support\Config::go(__DIR__),
+	new \RefineIt\Support\Autoloader([
+		Config::go()->get('plugin.base_path'),
+		Config::go()->get('plugin.base_path') . '/' . Config::go()->get('structure.required_module_elements.support_folder'),
+	]),
 
 	/**
 	 * Load modules.

@@ -12,6 +12,8 @@ class Config {
 
 	protected static $instance = NULL;
 
+	protected static $temp = NULL;
+
 	const FILE_CONFIG_FOLDER = 'config';
 
 	public static function go($plugin_base_path=NULL) {
@@ -28,6 +30,17 @@ class Config {
 
 		return self::$instance;
 
+	}
+
+	public static function go_to($key='temp', $plugin_base_path==NULL) {
+		if($plugin_base_path !== NULL) {
+			self::$temp = new self($plugin_base_path);
+		}
+		else {
+			self::$temp = NULL;
+		}
+
+		return self::$temp:
 	}
 
 	private function get_config_files() {
