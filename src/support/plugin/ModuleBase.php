@@ -18,7 +18,7 @@ abstract class ModuleBase implements ModuleInterface {
 	 */
 	public function __construct() {
 		// Load plugin or module configuration.
-		$this->config = new Config($this->get_plugin_root(), Config::go())
+		$this->config = new Config($this->get_plugin_root(), Config::go());
 		$text_domain = $this->config->get('plugin.text_domain', '');
 		$languages_path = $this->get_plugin_root() . '/' . $this->config->get('structure.languages_folder');
 

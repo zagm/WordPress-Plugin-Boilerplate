@@ -1,6 +1,6 @@
 <?php
 
-namespace RefineIt\Support
+namespace RefineIt\Support;
 
 
 class Config {
@@ -28,11 +28,16 @@ class Config {
 
 		}
 
+		echo '<pre>';
+		print_r(self::$instance->config);
+		echo '</pre>';
+
+
 		return self::$instance;
 
 	}
 
-	public static function go_to($key='temp', $plugin_base_path==NULL) {
+	public static function go_to($key='temp', $plugin_base_path=NULL) {
 		if($plugin_base_path !== NULL) {
 			self::$temp = new self($plugin_base_path);
 		}
@@ -40,7 +45,7 @@ class Config {
 			self::$temp = NULL;
 		}
 
-		return self::$temp:
+		return self::$temp;
 	}
 
 	private function get_config_files() {
@@ -56,7 +61,7 @@ class Config {
 				continue;
 			}
 
-			$real_file = $path . '/' $file;
+			$real_file = $path . '/' . $file;
 			$files[] = $real_file;
 		}
 
@@ -74,6 +79,7 @@ class Config {
 	}
 
 	public function load_from_object($object) {
+
 		$this->config = array_merge($this->config, $object->config);
 		return $this->config;
 	}
@@ -101,7 +107,7 @@ class Config {
 
 		$value = $default;
 		foreach ($components as $sub_field) {
-			if(is_array($this->hystack[$sub_field])) {
+			if(isset($this->hystack[$sub_field]) && is_array($this->hystack[$sub_field])) {
 				$this->hystack = $this->hystack[$sub_field];
 			}
 			else if(isset($this->hystack[$sub_field])) {

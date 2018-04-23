@@ -1,11 +1,10 @@
 <?php
 
-namespace RefineIt;
+namespace RwfineIt\Modules;
 
 use RefineIt\Support\Plugin\ModuleBase;
 
-
-class PluginShell extends ModuleBase {
+class Example extends ModuleBase {
 	public function __construct() {
 		self::parent();
 	}
@@ -19,11 +18,11 @@ class PluginShell extends ModuleBase {
 	}
 
 	public function activation() {
-		do_action('refine_it_module_activation');
+
 	}
 
 	public function deactivation() {
-		do_action('refine_it_module_deactivation');
+
 	}
 
 	public function register_scripts() {
