@@ -2,7 +2,7 @@
 
 namespace RefineIt\Support\Plugin;
 
-use ModuleInterface;
+use RefineIt\Support\Plugin\ModuleInterface;
 use RefineIt\Support\Config;
 
 
@@ -11,8 +11,6 @@ abstract class ModuleBase implements ModuleInterface {
 
 	abstract protected function get_plugin_root();
 
-	abstract protected function run_plugin();
-
 	/**
 	 * Construct and initialize object.
 	 */
@@ -20,7 +18,7 @@ abstract class ModuleBase implements ModuleInterface {
 		// Load plugin or module configuration.
 		$this->config = new Config($this->get_plugin_root(), Config::go());
 		$text_domain = $this->config->get('plugin.text_domain', '');
-		$languages_path = $this->get_plugin_root() . '/' . $this->config->get('structure.languages_folder');
+		$languages_path = $this->get_plugin_root() . '/' . $this->config->get('structure.languages_folder.name');
 
 		load_plugin_textdomain($text_domain, false, $languages_path);
 
@@ -53,4 +51,6 @@ abstract class ModuleBase implements ModuleInterface {
 	abstract public function register_scripts();
 
 	abstract public function register_styles();
+
+	abstract public function run_plugin();
 }

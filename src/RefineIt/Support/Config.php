@@ -28,11 +28,6 @@ class Config {
 
 		}
 
-		echo '<pre>';
-		print_r(self::$instance->config);
-		echo '</pre>';
-
-
 		return self::$instance;
 
 	}
@@ -74,14 +69,14 @@ class Config {
 		$this->hystack = NULL;
 
 		if($config_instance) {
-			$this->load_from_object($config_instance);
+			$this->config = $this->config_instance->config;
 		}
-	}
 
-	public function load_from_object($object) {
-
-		$this->config = array_merge($this->config, $object->config);
-		return $this->config;
+		// Ovewrite any existing properties and add a new one if they exist to new object.
+		$files = $this->get_config_files();
+		foreach ($files as $file) {
+			$this->load_from_file($file);
+		}
 	}
 
 	public function load_from_file($path) {
@@ -91,7 +86,7 @@ class Config {
 			$this->config[$parent_key] = array();
 		}
 
-		$this->config = array_merge($this->config, $c);
+		$this->config[$parent_key] = $c;
 		return $this->config;
 	}
 
@@ -101,25 +96,19 @@ class Config {
 
 	public function get($key, $default=NULL) {
 		$components = explode('.', $key);
-		if($this->hystack === NULL) {
-			$this->hystack = $this->config;
-		}
+		$this->hystack = $this->config;
 
-		$value = $default;
-		foreach ($components as $sub_field) {
-			if(isset($this->hystack[$sub_field]) && is_array($this->hystack[$sub_field])) {
-				$this->hystack = $this->hystack[$sub_field];
-			}
-			else if(isset($this->hystack[$sub_field])) {
-				$value = $this->hystack[$sub_field];
+		$i = 0;
+		while ($i < count($components)) {
+			if(isset($this->hystack[$components[$i]])) {
+				$this->hystack = $this->hystack[$components[$i]];
 			}
 			else {
 				return $default;
 			}
+			$i++;
 		}
-
-		return $value;
-
+		return $this->hystack;
 	}
 
 }

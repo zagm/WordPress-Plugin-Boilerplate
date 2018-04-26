@@ -7,15 +7,11 @@ use RefineIt\Support\Plugin\ModuleBase;
 
 class PluginShell extends ModuleBase {
 	public function __construct() {
-		self::parent();
+		parent::__construct();
 	}
 
-	private function get_plugin_root() {
-		return $this->config->get('plugin.base_path');
-	}
-
-	private function run_plugin() {
-		return;
+	protected function get_plugin_root() {
+		return __DIR__;
 	}
 
 	public function activation() {
@@ -32,5 +28,9 @@ class PluginShell extends ModuleBase {
 
 	public function register_styles() {
 
+	}
+
+	public function run_plugin() {
+		return;
 	}
 }
