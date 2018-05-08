@@ -37,8 +37,11 @@ abstract class ModuleBase implements ModuleInterface {
 			register_deactivation_hook($entry_file, array( $this, 'deactivation' ) );
 		}
 		else {
-			add_action('refine_it_module_activation', array($this, 'activation'), 10, 0);
-			add_action('refine_it_module_deactivation', array($this, 'deactivation'), 10, 0);
+			// Note: We need root plugin prefix so we use configuration from static variable of Config class.
+			$root_module_prefix = Config::go()->get('prefix.module_prefix');
+
+			add_action(($root_module_prefix . 'module_activation'), array($this, 'activation'), 10, 0);
+			add_action(($root_module_prefix . 'module_deactivation'), array($this, 'deactivation'), 10, 0);
 		}
 
 		$this->run_plugin();

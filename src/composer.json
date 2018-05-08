@@ -1,0 +1,6 @@
+{
+    "require-dev": {
+        "splitbrain/php-cli": "1.1.*",
+        "psr/log": "dev-master"
+    }
+}
