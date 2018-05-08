@@ -17,12 +17,37 @@ return [
 	],
 
 	/**
+	 * Cpde templates used for fast generation of individual buiilding blocks.
+	 * 
+	 */
+	'code_folder'			=> [
+		'name'		=> 'code',
+		'required'	=> 0
+	],
+
+	/**
 	 * General plugin configuration (not related to specific WP installation).
 	 * 
 	 */
 	'config_folder'			=> [
 		'name'		=> 'config',
-		'required'	=> 1
+		'required'	=> 1,
+
+		/**
+		 * Elements inside config_folder that should be removed when creating new module.
+		 * 
+		 */
+		'sub_elements' => [
+			/**
+			 * Since the structure of all modules should be the same there is no need to keep
+			 * same structure configuration in every module.
+			 * 
+			 */
+			[
+				'name' => 'structure.php',
+				'required' => 0
+			]
+		]
 	],
 
 	/**

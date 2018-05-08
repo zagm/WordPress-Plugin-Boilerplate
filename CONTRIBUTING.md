@@ -37,3 +37,5 @@ All pull requests must fit within the scope of the project to be considered.
 * There should be ONE empty line between namespace declaration and first use statment
 * First we list all "use" statments that refer to external dependencies and then all that refer to internal dependencies
 * Use tabs for indention
+* Use single quotes for string literals.
+* Use double qutes for around string literals that are displayed to end-user.

@@ -1,6 +1,6 @@
 <?php
 
-namespace RefineIt;
+namespace RefineIt;  // {{ @module_namespace }}
 
 use RefineIt\Support\Plugin\ModuleBase;
 
@@ -15,11 +15,13 @@ class PluginShell extends ModuleBase {
 	}
 
 	public function activation() {
-		do_action('refine_it_module_activation');
+		$root_module_prefix = Config::go()->get('prefix.module_prefix');
+		do_action(($root_module_prefix . 'module_activation'));
 	}
 
 	public function deactivation() {
-		do_action('refine_it_module_deactivation');
+		$root_module_prefix = Config::go()->get('prefix.module_prefix');
+		do_action(($root_module_prefix . 'module_deactivation'));
 	}
 
 	public function register_scripts() {

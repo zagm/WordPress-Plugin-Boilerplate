@@ -33,12 +33,9 @@ return [
 	 * Note: For each module you have to extend directory search array in order for module to be able to load.
 	 * 
 	 */
-	/*new \RefineIt\Support\Autoloader([
-		\RefineIt\Support\Config::go_to('temp', __DIR__ . '/' . \RefineIt\Support\Config::go()->get('structure.required_shell_elements.modules_folder')  . '/example')->get('plugin.base_path'),
-		\RefineIt\Support\Config::go_to('temp')->get('plugin.base_path') . '/' . \RefineIt\Support\Config::go_to('temp')->get('structure.required_module_elements.models_folder'),
-		\RefineIt\Support\Config::go_to('temp')->get('plugin.base_path') . '/' . \RefineIt\Support\Config::go_to('temp')->get('structure.required_module_elements.controllers_folder'),
-	]),
-	new RefineIt\Modules\Example(),*/
+	//
+	// ...
+	// 
 
 	
 	/**
