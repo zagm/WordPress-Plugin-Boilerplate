@@ -19,6 +19,12 @@ cd wp-content/plugins
 git clone git@github.com:zagm/WordPress-Plugin-Boilerplate.git dev-<plugin-new-name>
 ```
 
+Move into RefineIt module and clone support project related to this one to get all fundamental pices of plugin boilerplate.
+
+```
+git clone git@gitlab.com:Zag/refine-it-support.git
+```
+
 
 Create a symbolic link of a repository src folder to real plugin folder (see the example below)
 
