@@ -1,6 +1,16 @@
+# Plugin base - located in another repository.
+
+/src/RefineIt/Support
+
+# Editors & IDEs
+
 .idea/
-mysql-connector-java-5.1.26-bin.jar
-mysql-connector-license.txt
+
+# External
+
 /src/composer.phar
 /src/vendor
-/src/RefineIt/Support  # Located in another repository.
+
+mysql-connector-java-5.1.26-bin.jar
+mysql-connector-license.txt
+
