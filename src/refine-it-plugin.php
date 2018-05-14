@@ -10,16 +10,17 @@
   License: GPL V3
  */
 
-require_once __DIR__ . '/RefineIt/Support/Config.php';
-require_once __DIR__ . '/RefineIt/Support/Autoloader.php';
+require_once 'vendor/autoload.php';
+
+require_once __DIR__ . '/RefineIt/Support/boot.php';
 
 
 return [
 	/**
 	 * Initialize core elements.
 	 *
-	 * Note: All elements under this section are required for plugin to function - do not change anything
-	 * unless you really know what you are doing.
+	 * Note: All elements under this section are required for plugin to function - do not change anything unless you 
+	 * really know what you are doing.
 	 * 
 	 */
 	\RefineIt\Support\Config::go(__DIR__ . '/RefineIt'),
@@ -28,9 +29,9 @@ return [
 	/**
 	 * Load modules.
 	 *
-	 * Create object for each module you are planning to use.
+	 * Construct object for each module you are planning to use and place it under this section.
 	 *
-	 * Note: For each module you have to extend directory search array in order for module to be able to load.
+	 * Note: For each module you have to Autoloader´s include list to enable construction of module object.
 	 * 
 	 */
 	//
@@ -38,10 +39,13 @@ return [
 	// 
 
 	/**
-	 * Load plugin shell.
+	 * Initialize last components.
 	 *
-	 * Note: Do not touch this seaction - if in need cerate your own plugin shell.
+	 * Note: All elements under this section are required for plugin to function - do not change anything unless you 
+	 * really know what you are doing.
 	 * 
 	 */
-	new \RefineIt\PluginShell()
+	register_activation_hook(__FILE__, 'RefineIt\Support\activation'),
+	register_deactivation_hook(__FILE__, 'RefineIt\Support\deactivation')
 ];
+
