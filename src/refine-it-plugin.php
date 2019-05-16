@@ -37,6 +37,9 @@ return [
 	//
 	// ...
 	// 
+	\RefineIt\Support\Config::go(__DIR__ . '/EchoAjax'),
+	new \RefineIt\Support\Autoloader('EchoAjax'),
+	new \EchoAjax\PluginShell(),
 
 	/**
 	 * Initialize last components.
