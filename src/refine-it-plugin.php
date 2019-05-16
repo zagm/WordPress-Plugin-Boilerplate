@@ -32,14 +32,18 @@ return [
 	 * Construct object for each module you are planning to use and place it under this section.
 	 *
 	 * Note: For each module you have to Autoloader´s include list to enable construction of module object.
+	 *
+	 * To fire up new module add lines below and change name of the module to correct one:
+	 *
+	 * \RefineIt\Support\Config::go(__DIR__ . '/Example'),
+	 * new \RefineIt\Support\Autoloader('Example'),
+	 * new \Example\PluginShell(),
 	 * 
 	 */
+	
 	//
 	// ...
 	// 
-	\RefineIt\Support\Config::go(__DIR__ . '/EchoAjax'),
-	new \RefineIt\Support\Autoloader('EchoAjax'),
-	new \EchoAjax\PluginShell(),
 
 	/**
 	 * Initialize last components.

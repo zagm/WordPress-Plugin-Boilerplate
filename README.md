@@ -8,7 +8,7 @@ If you want to contribute to this plugin˙s skelet and setup development instanc
 
 ### Prerequisites
 
-You need to have [Composer](https://getcomposer.org/) installed to be able to run this project-
+You need to have [Composer](https://getcomposer.org/) installed to be able to run this project.
 
 ### Installing
 
@@ -47,7 +47,7 @@ Rename ``refine-it-plugin.php`` to ``<plugin-name>.php``.
 mv refine-it-plugin.php <plugin-name>.php
 ```
 
-If everything was done right you should see your plugin on plugins page inside admin dashboard. Activation and deactivation should already be functional.
+If everything was done right you should see your plugin on plugins page on admin dashboard. Activation and deactivation should already be functional.
 
 Use Wordpress plugin box (``wppb.php``) to acomplish common tasks faster.
 
@@ -120,4 +120,4 @@ This project is licensed under the GNU v3.0 License - see the ```LICENSE.md``` f
 
 ## Acknowledgments
 
-* Big thanks goes to @theantichris for inspiration on this fork of a project.
+* Big thanks goes to @theantichris for inspiration on this project.
