@@ -1,3 +1,7 @@
+# PROJECT WAS MOVED!
+
+New repository for this project can be found [here](https://gitlab.com/Zag/intrigo-plugin-box)
+
 # WordPress Plugin Boilerplate
 
 Plugin base for flexible and easy extensible Wordpress plugin.
